@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  postgres:
+    container_name: msproject
+    image: postgres
+    environment:
+      POSTGRES_USER: msproject
+      POSTGRES_PASSWORD: 1234
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/msproject
+    ports:
+      - "5555:5432"
+volumes:
+  postgres:
